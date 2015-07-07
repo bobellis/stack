@@ -6,6 +6,8 @@ get "sign_up" => "users#new", :as => "sign_up"
 
 root :to => "users#new"
 
-resources :users
-resources :questions
+  resources :users
+  resources :questions do
+    resources :answers
+  end
 end
