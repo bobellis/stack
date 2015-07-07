@@ -3,5 +3,5 @@
 <%= form_for [@question, @answer] do |f| %>
   <%= f.label :text %>
   <%= f.text_field :text %>
-  <p><%= f.submit %></p>
+  <%= f.submit %>
 <% end %>
