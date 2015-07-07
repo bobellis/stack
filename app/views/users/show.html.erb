@@ -1,0 +1,10 @@
+Email address: <%= @user.email %>
+<br>
+is Admin? <%= @user.admin %>
+<%= form_for @user do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :admin %>
+  <%= f.check_box :admin, value: true %>
+  <%= f.submit %>
+<% end %>

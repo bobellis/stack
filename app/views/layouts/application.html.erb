@@ -10,14 +10,20 @@
   <%= flash[:notice] %>
   <%= flash[:alert]  %>
 
-<div id ="user_nav">
+<div class ="navbar navbar-default">
+
+  <div id ="right">
   <% if current_user %>
     Logged in as <%= current_user.email %>
-    <%= link_to "Log out", log_out_path %>
+    <%= link_to "Log out", log_out_path, class:"btn btn-xs btn-danger" %>
   <% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "Log in", log_in_path %>
-  <% end %>  
+    <%= link_to "Sign up", sign_up_path, class:"btn btn-xs btn-success" %> or
+    <%= link_to "Log in", log_in_path, class:"btn btn-xs btn-warning"%>
+  <% end %>
+  </div>
+  <!-- <li><a href = "questions">Questions</a></li> -->
+  <%= link_to "Questions", questions_path, class:"btn btn-xs btn-primary" %>
+
 </div>
 
 <%= yield %>
