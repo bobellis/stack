@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_uniqueness_of :email
+  after_create :send_welcome_message
+
+  def send_welcome_message
+    StackMailer.new_user_confirmation(self).deliver_now
+  end
 
   def encrypt_password
     if password.present?
