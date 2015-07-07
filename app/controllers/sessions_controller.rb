@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "You've been logged in."
 
       session[:user_id] = @user.id
-      redirect_to root_url, :notice => "Logged in."
+      redirect_to questions_path, :notice => "Logged in."
     else
 
       flash[:alert] = "There was a problem logging you in."
